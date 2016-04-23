@@ -3,7 +3,6 @@ package scottie.cs301.EpicActuals.Players;
 import java.util.Random;
 
 import scottie.cs301.EpicActuals.LocalProtect.STATIC;
-import scottie.cs301.EpicActuals.Resources.Actions.CHOICE;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
 import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
@@ -24,7 +23,7 @@ public class ComputerActualRandy
         extends ComputerAbstract {
 
     protected GameStateActual myRecentState;//full copy of most recently received Game State for easier access
-    protected boolean playedCardsAlready =false;
+    protected boolean playedCardsAlready = false;
 
     public ComputerActualRandy(String name) {
         super(name);
@@ -45,12 +44,11 @@ public class ComputerActualRandy
                     if (!playedCardsAlready) {
                         this.game.sendAction(new SendSpell(this,
                                 selectNextSpell()));
-                        playedCardsAlready=true;
+                        playedCardsAlready = true;
                     }
                 }
-                if(myRecentState.playerStages[playerNum] == STAGE.DoneCasting)
-                {
-                    playedCardsAlready=false;
+                if (myRecentState.playerStages[playerNum] == STAGE.DoneCasting) {
+                    playedCardsAlready = false;
                 }
             }
         }
@@ -77,9 +75,6 @@ public class ComputerActualRandy
 
         return spell;
     } //use Recent State and pick cards
-
-    public CHOICE respondToQuestion(CHOICE[] validAnswers) {
-        Random rand = new Random();
-        return validAnswers[rand.nextInt(validAnswers.length)]; //pick a random return from the given
-    } //contextual response
 }
+
+

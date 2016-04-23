@@ -19,8 +19,8 @@ public
 class Deck
     {
         public static final Card[] theDeck = {
-                new Placeholder(),
                 //myID, myInit, myPlace, myImage, mySchool
+                new Placeholder(),
                 new CardActualExampleForAlpha(1, 0, 2, R.drawable.ballsy, SCHOOL.ILLUSION),
                 new CardActualExampleForAlpha(16, 19, 3, R.drawable.bedazzlement, SCHOOL.ILLUSION),
                 new CardActualExampleForAlpha(17, 0, 1, R.drawable.benvoodoo, SCHOOL.DARK),

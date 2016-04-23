@@ -1,24 +1,16 @@
 package scottie.cs301.EpicActuals.Players;
 
-import android.media.Image;
-import android.util.Log;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import org.apache.http.auth.NTUserPrincipal;
-
 import scottie.cs301.EpicActuals.LocalProtect.STATIC;
-import scottie.cs301.EpicActuals.Resources.Actions.CHOICE;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
 import scottie.cs301.EpicActuals.Resources.Cards.Deck;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
 import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
 import scottie.cs301.EpicActuals.Resources.Info.STAGE;
-import scottie.cs301.Imports.GameFramework.Game;
-import scottie.cs301.Imports.GameFramework.GameHumanPlayer;
 import scottie.cs301.Imports.GameFramework.GameMainActivity;
 import scottie.cs301.Imports.GameFramework.R;
 import scottie.cs301.Imports.GameFramework.infoMsg.GameInfo;
@@ -144,6 +136,9 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
         Button readyButton = (Button) activity.findViewById(R.id.readyButton);
         readyButton.setOnClickListener(this);
 
+        Button killButton = (Button) activity.findViewById(R.id.killButton);
+        killButton.setOnClickListener(this);
+
         if (myRecentState != null) {
             receiveInfo(myRecentState);
             populateHand();
@@ -158,7 +153,11 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
         if (v.getId() == R.id.readyButton) {
             this.onReadyClicked();
             //Log.i("After Send", "" + myHand.toString());
-        } else {
+        }
+        else if(v.getId() == R.id.killButton) {
+            System.exit(0);
+        }
+        else {
             ImageButton clickedCard = (ImageButton) myActivity.findViewById(v.getId());
             clickedCard.setImageAlpha(382 - clickedCard.getImageAlpha());
         }
@@ -196,9 +195,6 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
 
     } //visual feedback for card selection
 
-    public CHOICE respondToQuestion(CHOICE[] validAnswers) {
-        return null;
-    } // contextual response
 
     public void populateHand() {
         myHand = myRecentState.allCardsFrom(STATIC.locOf(playerNum, LOCATION.Hand), myRecentState.spellCardLocation);

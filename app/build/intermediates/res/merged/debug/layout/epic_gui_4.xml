@@ -3,7 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="landscape"
     android:id="@+id/top_view">
+    <!--
+        External Citation:
+            Date: 4/22/16
+            Problem: needed to lock app in landscape mode
+            Resource: http://stackoverflow.com/questions/4675750/lock-screen-orientation-android
+            Solution: used code from this post
+            -->
 
     <LinearLayout
         android:orientation="horizontal"
@@ -75,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Position: Across"
                 android:id="@+id/player2Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -118,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Position: Right"
                 android:id="@+id/player3Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -161,7 +169,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Me"
                 android:id="@+id/player4Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"

@@ -3,7 +3,6 @@ package scottie.cs301.EpicActuals.LocalProtect;
 import scottie.cs301.EpicActuals.Players.ComputerAbstract;
 import scottie.cs301.EpicActuals.Players.HumanAbstract;
 import scottie.cs301.EpicActuals.Resources.Actions.ActionAbstract;
-import scottie.cs301.EpicActuals.Resources.Actions.SendChoice;
 import scottie.cs301.EpicActuals.Resources.Actions.SendOverride;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
 import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
@@ -58,10 +57,6 @@ public class STATIC {
         GameAction myAction = action;
         if (action instanceof ActionAbstract) {
             switch (((ActionAbstract) action).actionID) {
-                case Choice: {
-                    SendChoice forReturn = (SendChoice) action;
-                    return LocalGameActual.theGame.makeMove(forReturn);
-                }
                 case Override: {
                     SendOverride forReturn = (SendOverride) action;
                     return LocalGameActual.theGame.makeMove(forReturn);

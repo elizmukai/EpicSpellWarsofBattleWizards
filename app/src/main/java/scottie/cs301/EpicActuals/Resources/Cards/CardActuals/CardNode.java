@@ -48,7 +48,10 @@ public abstract class CardNode extends Card implements Serializable{
      */
     public void damage(int player, int damageVal, GameStateActual masterState)
     {
-        masterState.playerHealths[player] -= damageVal;
+        //stop healths from going into negatives
+        if(masterState.playerHealths[player] - damageVal >= 0) {
+            masterState.playerHealths[player] -= damageVal;
+        }
     }
 
     /**
@@ -59,7 +62,9 @@ public abstract class CardNode extends Card implements Serializable{
      */
     public void heal(int player, int healVal, GameStateActual masterState)
     {
-        masterState.playerHealths[player] += healVal;
+        if(masterState.playerHealths[player] > 0) {
+            masterState.playerHealths[player] += healVal;
+        }
     }
 
     /**
@@ -74,9 +79,14 @@ public abstract class CardNode extends Card implements Serializable{
         int numPlayers = masterState.playerHealths.length;
 
         if (playerID == numPlayers) {
-            return 0;
+            if (masterState.playerHealths[0] > 0) {
+                return 0;
+            }
         }
-        return playerID + 1;
+        else if (masterState.playerHealths[playerID +1] > 0) {
+            return playerID + 1;
+        }
+        return -1;
     }
 
     /**

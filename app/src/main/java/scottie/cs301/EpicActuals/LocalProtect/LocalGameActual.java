@@ -2,7 +2,6 @@ package scottie.cs301.EpicActuals.LocalProtect;
 
 import scottie.cs301.EpicActuals.Players.ComputerActualRandy;
 import scottie.cs301.EpicActuals.Resources.Actions.OVRD;
-import scottie.cs301.EpicActuals.Resources.Actions.SendChoice;
 import scottie.cs301.EpicActuals.Resources.Actions.SendOverride;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
 import scottie.cs301.EpicActuals.Resources.Cards.Deck;
@@ -89,9 +88,6 @@ public class LocalGameActual
         }
     } //end game string
 
-    protected boolean makeMove(SendChoice action) {
-        return false;
-    }
 
     protected boolean makeMove(SendOverride action) {
         if (action.theOVRDAction == OVRD.AdvanceToCasting) {
