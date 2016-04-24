@@ -74,9 +74,13 @@ public class ComputerActualRandy
             myRecentState.spellCardLocation[spell[i]] = LOCATION.DiscardPile;
             //tell (my) game state which card was pulled
         }
-
+computerMoved(spell);
         return spell;
     } //use Recent State and pick cards
-}
+public boolean computerMoved(int[] spell){
+    game.sendAction(new SendSpell(this, spell));
+    return true;
 
+}
+}
 
