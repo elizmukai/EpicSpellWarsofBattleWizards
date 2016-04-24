@@ -15,7 +15,7 @@ public class Explodifying extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Explodifying() {
-        super(26, 0, 2, R.drawable.explodifying, SCHOOL.ELEMENTAL);
+        super(12, 0, 2, R.drawable.explodifying, SCHOOL.ELEMENTAL);
     }
 
     @Override

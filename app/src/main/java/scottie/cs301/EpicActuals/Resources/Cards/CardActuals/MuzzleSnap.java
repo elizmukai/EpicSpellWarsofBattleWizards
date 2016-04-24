@@ -15,7 +15,7 @@ public class MuzzleSnap extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MuzzleSnap() {
-        super(14, 0, 1, R.drawable.muzzlesnaps, SCHOOL.PRIMAL);
+        super(24, 0, 1, R.drawable.muzzlesnaps, SCHOOL.PRIMAL);
     }
 
     @Override

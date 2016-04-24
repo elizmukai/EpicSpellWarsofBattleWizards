@@ -15,7 +15,7 @@ public class DragonHoard extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected DragonHoard() {
-        super(24, 6, 3, R.drawable.dragonhoard, SCHOOL.ARCANE);
+        super(10, 6, 3, R.drawable.dragonhoard, SCHOOL.ARCANE);
     }
 
     @Override

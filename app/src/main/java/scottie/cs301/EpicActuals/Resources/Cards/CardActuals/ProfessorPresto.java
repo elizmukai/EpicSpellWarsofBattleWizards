@@ -16,7 +16,7 @@ public class ProfessorPresto extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected ProfessorPresto() {
-        super(8, 0, 1, R.drawable.professorpresto, SCHOOL.ARCANE);
+        super(26, 0, 1, R.drawable.professorpresto, SCHOOL.ARCANE);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class MagmaGog extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MagmaGog() {
-        super(4, 0, 1, R.drawable.magmagog, SCHOOL.ELEMENTAL);
+        super(18, 0, 1, R.drawable.magmagog, SCHOOL.ELEMENTAL);
     }
 
     @Override

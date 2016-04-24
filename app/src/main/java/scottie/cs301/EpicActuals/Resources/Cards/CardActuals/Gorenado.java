@@ -15,7 +15,7 @@ public class Gorenado extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Gorenado() {
-        super(28, 2, 3, R.drawable.gorenado, SCHOOL.PRIMAL);
+        super(14, 2, 3, R.drawable.gorenado, SCHOOL.PRIMAL);
     }
 
     @Override

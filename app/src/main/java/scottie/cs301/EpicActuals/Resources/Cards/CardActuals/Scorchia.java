@@ -15,7 +15,7 @@ public class Scorchia extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Scorchia() {
-        super(9, 0, 1, R.drawable.scorchia, SCHOOL.ELEMENTAL);
+        super(27, 0, 1, R.drawable.scorchia, SCHOOL.ELEMENTAL);
     }
 
     @Override

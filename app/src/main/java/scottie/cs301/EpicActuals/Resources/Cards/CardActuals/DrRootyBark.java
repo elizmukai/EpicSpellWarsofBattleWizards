@@ -15,7 +15,7 @@ public class DrRootyBark extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected DrRootyBark() {
-        super(54, 0, 1, R.drawable.drrootybark, SCHOOL.PRIMAL);
+        super(11, 0, 1, R.drawable.drrootybark, SCHOOL.PRIMAL);
     }
 
     @Override

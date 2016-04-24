@@ -15,7 +15,7 @@ public class DeathWish extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected DeathWish() {
-        super(22, 8, 3, R.drawable.deathwish, SCHOOL.DARK);
+        super(8, 8, 3, R.drawable.deathwish, SCHOOL.DARK);
     }
 
     @Override

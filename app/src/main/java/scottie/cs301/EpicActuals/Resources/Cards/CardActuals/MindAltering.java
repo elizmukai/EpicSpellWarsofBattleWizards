@@ -16,7 +16,7 @@ public class MindAltering extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MindAltering() {
-        super(6, 0, 2, R.drawable.mindaltering, SCHOOL.ILLUSION);
+        super(23, 0, 2, R.drawable.mindaltering, SCHOOL.ILLUSION);
     }
 
     @Override

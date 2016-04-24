@@ -15,7 +15,7 @@ public class ThaiFoon extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected ThaiFoon() {
-        super(10, 0, 1, R.drawable.thaifoon, SCHOOL.ELEMENTAL);
+        super(28, 0, 1, R.drawable.thaifoon, SCHOOL.ELEMENTAL);
     }
 
     @Override

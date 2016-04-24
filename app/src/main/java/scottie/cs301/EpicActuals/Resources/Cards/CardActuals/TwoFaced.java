@@ -15,7 +15,7 @@ public class TwoFaced extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected TwoFaced() {
-        super(12, 0, 2, R.drawable.twofaced, SCHOOL.ARCANE);
+        super(30, 0, 2, R.drawable.twofaced, SCHOOL.ARCANE);
     }
 
     @Override

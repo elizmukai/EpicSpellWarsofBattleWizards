@@ -15,7 +15,7 @@ public class MidnightMerlin extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MidnightMerlin() {
-        super(5, 0, 1, R.drawable.midnightmerlin, SCHOOL.DARK);
+        super(21, 0, 1, R.drawable.midnightmerlin, SCHOOL.DARK);
     }
 
     @Override

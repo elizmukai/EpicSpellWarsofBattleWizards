@@ -44,10 +44,7 @@ public class LocalGameActual
 
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-        p.sendInfo(new GameStateActual
-                (STATIC.idOf(p),
-                        masterState
-                ));
+        p.sendInfo(new GameStateActual(STATIC.idOf(p), masterState));
     } //takes state and passes it along
 
     @Override
@@ -56,6 +53,7 @@ public class LocalGameActual
             return true;
         }
         return masterState.playerStages[playerIdx] == masterState.curStage;
+
     }
 
     @Override

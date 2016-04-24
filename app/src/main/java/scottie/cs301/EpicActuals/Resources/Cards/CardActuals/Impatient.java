@@ -15,7 +15,7 @@ public class Impatient extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Impatient() {
-        super(3, 100, 2, R.drawable.impatient, SCHOOL.ARCANE);
+        super(15, 100, 2, R.drawable.impatient, SCHOOL.ARCANE);
     }
 
     @Override

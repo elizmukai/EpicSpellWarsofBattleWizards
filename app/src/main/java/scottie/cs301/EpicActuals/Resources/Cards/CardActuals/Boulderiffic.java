@@ -15,7 +15,7 @@ public class Boulderiffic extends CardNode implements Serializable {
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Boulderiffic() {
-        super(2, 0, 2, R.drawable.boulderiffic, SCHOOL.PRIMAL);
+        super(4, 0, 2, R.drawable.boulderiffic, SCHOOL.PRIMAL);
     }
 
     @Override

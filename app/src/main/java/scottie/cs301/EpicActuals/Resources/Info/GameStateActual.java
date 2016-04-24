@@ -47,7 +47,7 @@ public class GameStateActual extends GameState {
 
         for(int itter = 0; itter < numPlayers; itter++)
         {
-            playerHealths[itter] = 25;
+            playerHealths[itter] = 100;
         }
         curStage = STAGE.SelectingCards;
 
@@ -112,12 +112,6 @@ public class GameStateActual extends GameState {
         return forBuffer[RRR.nextInt(forBuffer.length)];
     }
 
-    public
-    void damage(int player, int damageVal)
-    {
-        playerHealths[player] -= damageVal;
-    }
-
     public void deal(int player)
     {
         if(allCardsFrom(LOCATION.DrawPile, spellCardLocation).length < 9)
@@ -130,6 +124,13 @@ public class GameStateActual extends GameState {
         while (handSize < 9) {
             spellCardLocation[randomCardFrom(LOCATION.DrawPile, spellCardLocation)] = STATIC.locOf(player, LOCATION.Hand);
             handSize = allCardsFrom(STATIC.locOf(player, LOCATION.Hand), spellCardLocation).length;
+        }
+
+       while(handSize < 9) {
+            Random r = new Random();
+            int card = r.nextInt(29) + 1;
+
+           handSize = allCardsFrom(STATIC.locOf(player, LOCATION.Hand), spellCardLocation).length;
         }
 
     }

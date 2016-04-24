@@ -15,7 +15,7 @@ public class KingOberon extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected KingOberon() {
-        super(56, 0, 1, R.drawable.kingoberon, SCHOOL.PRIMAL);
+        super(16, 0, 1, R.drawable.kingoberon, SCHOOL.PRIMAL);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class FistONature extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected FistONature() {
-        super(27, 14, 3, R.drawable.fistonature, SCHOOL.PRIMAL);
+        super(13, 14, 3, R.drawable.fistonature, SCHOOL.PRIMAL);
     }
 
     @Override

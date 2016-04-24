@@ -15,7 +15,7 @@ public class Chicken extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Chicken() {
-        super(20, 3, 3, R.drawable.chicken, SCHOOL.ELEMENTAL);
+        super(6, 3, 3, R.drawable.chicken, SCHOOL.ELEMENTAL);
     }
 
     @Override

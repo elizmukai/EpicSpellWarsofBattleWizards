@@ -15,7 +15,7 @@ public class LighteningBolt extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected LighteningBolt() {
-        super(29, 9, 3, R.drawable.lightningbolt, SCHOOL.ELEMENTAL);
+        super(17, 9, 3, R.drawable.lightningbolt, SCHOOL.ELEMENTAL);
     }
 
     @Override

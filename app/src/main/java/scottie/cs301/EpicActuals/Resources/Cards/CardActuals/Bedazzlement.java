@@ -15,7 +15,7 @@ public class Bedazzlement extends CardNode implements Serializable {
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Bedazzlement() {
-        super(16, 19, 3, R.drawable.bedazzlement, SCHOOL.ILLUSION);
+        super(2, 19, 3, R.drawable.bedazzlement, SCHOOL.ILLUSION);
     }
 
     @Override

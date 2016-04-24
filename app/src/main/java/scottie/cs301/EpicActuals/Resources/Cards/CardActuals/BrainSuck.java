@@ -15,7 +15,7 @@ public class BrainSuck extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected BrainSuck() {
-        super(18, 15, 3, R.drawable.brainsuck, SCHOOL.ILLUSION);
+        super(5, 15, 3, R.drawable.brainsuck, SCHOOL.ILLUSION);
     }
 
     @Override

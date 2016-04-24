@@ -16,6 +16,6 @@ public class CardActualExampleForAlpha extends CardNode {
 
     @Override
     public void resolve(GameStateActual currentState, int[] mySpell, int myCasterID) {
-        currentState.damage(STATIC.returnLeft(myCasterID) , initiative);
+        damage(myCasterID,2, currentState);
     }
 }

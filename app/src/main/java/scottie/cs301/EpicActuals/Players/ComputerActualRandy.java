@@ -4,6 +4,7 @@ import java.util.Random;
 
 import scottie.cs301.EpicActuals.LocalProtect.STATIC;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
+import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
 import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
 import scottie.cs301.EpicActuals.Resources.Info.STAGE;
@@ -24,6 +25,7 @@ public class ComputerActualRandy
 
     protected GameStateActual myRecentState;//full copy of most recently received Game State for easier access
     protected boolean playedCardsAlready = false;
+    Card[] hand = new Card[9];
 
     public ComputerActualRandy(String name) {
         super(name);

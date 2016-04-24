@@ -15,7 +15,7 @@ public class OldScratch extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected OldScratch() {
-        super(13, 0, 1, R.drawable.oldscratch, SCHOOL.DARK);
+        super(25, 0, 1, R.drawable.oldscratch, SCHOOL.DARK);
     }
 
     @Override

@@ -52,6 +52,9 @@ public abstract class CardNode extends Card implements Serializable{
         if(masterState.playerHealths[player] - damageVal >= 0) {
             masterState.playerHealths[player] -= damageVal;
         }
+        else {
+            damage(player + 1, damageVal, masterState);
+        }
     }
 
     /**
@@ -64,7 +67,15 @@ public abstract class CardNode extends Card implements Serializable{
     {
         if(masterState.playerHealths[player] > 0) {
             masterState.playerHealths[player] += healVal;
+
+            if (masterState.playerHealths[player] > 100) {
+                masterState.playerHealths[player] = 100;
+            }
         }
+        else {
+            heal(player + 1, healVal, masterState);
+        }
+
     }
 
     /**
@@ -83,29 +94,36 @@ public abstract class CardNode extends Card implements Serializable{
                 return 0;
             }
         }
-        else if (masterState.playerHealths[playerID +1] > 0) {
+        else if (masterState.playerHealths[playerID + 1] > 0) {
             return playerID + 1;
         }
-        return -1;
+        else {
+            returnRight(playerID + 1, masterState);
+        }
+       return 0;
     }
 
     /**
      * returns the player to the left of a given player
      *
-     * @param player given player
+     * @param playerID given player
      * @param masterState gamestate object
      * @return ID number of player to left
      */
     public static
-    int returnLeft(int player, GameStateActual masterState)
+    int returnLeft(int playerID, GameStateActual masterState)
     {
-        int numPlayers = masterState.playerHealths.length;
-
-        if(player == 0)
-        {
-            return numPlayers - 1;
+        if (playerID == 0) {
+            if (masterState.playerHealths[4] > 0) {
+                return 4;
+            }
         }
-        return player - 1;
+        else if (masterState.playerHealths[playerID - 1] > 0) {
+            return playerID - 1;
+        } else {
+            returnLeft(playerID - 1, masterState);
+        }
+        return 4;
     }
 
     /**
@@ -119,7 +137,7 @@ public abstract class CardNode extends Card implements Serializable{
 
         // goes through the playerHealths array to find lowest health score
         for (int i = 0; i < masterState.playerHealths.length; i++) {
-            if (masterState.playerHealths[i] < masterState.playerHealths[i + 1]) {
+            if (masterState.playerHealths[i] < masterState.playerHealths[i + 1] && masterState.playerHealths[i] > 0) {
                 weakest = i;
             }
         }

@@ -15,7 +15,7 @@ public class Devilicious extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected Devilicious() {
-        super(23, 0, 2, R.drawable.devilicious, SCHOOL.DARK);
+        super(9, 0, 2, R.drawable.devilicious, SCHOOL.DARK);
     }
 
     @Override

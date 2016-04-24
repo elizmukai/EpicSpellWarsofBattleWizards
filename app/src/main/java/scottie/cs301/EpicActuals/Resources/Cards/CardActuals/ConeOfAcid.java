@@ -15,7 +15,7 @@ public class ConeOfAcid extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected ConeOfAcid() {
-        super(21, 4, 3, R.drawable.coneofacid, SCHOOL.ARCANE);
+        super(7, 4, 3, R.drawable.coneofacid, SCHOOL.ARCANE);
     }
 
     @Override

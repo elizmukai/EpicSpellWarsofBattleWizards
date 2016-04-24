@@ -15,7 +15,7 @@ public class MightyGro extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MightyGro() {
-        super(57, 0, 2, R.drawable.mightygro, SCHOOL.PRIMAL);
+        super(22, 0, 2, R.drawable.mightygro, SCHOOL.PRIMAL);
     }
 
     @Override

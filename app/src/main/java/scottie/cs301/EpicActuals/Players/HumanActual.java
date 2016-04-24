@@ -27,7 +27,7 @@ import static java.util.Arrays.copyOf;
  * Receive info and build the GUI.
  * Handle UI and send actions back to Local.
  */
-public class HumanActual extends HumanAbstract implements View.OnClickListener, View.OnLongClickListener {
+public class HumanActual extends HumanAbstract implements View.OnClickListener {
     protected GameStateActual myRecentState; //full copy of most recently received Game State for easier access
     private GameMainActivity myActivity;
     private ImageButton[] myHandImages;
@@ -73,23 +73,6 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
 
     public void setAsGui(GameMainActivity activity) {
         myActivity = activity;
-
-
-//
-//
-//        if (myRecentState==null)
-//        {
-//            return;
-//        }
-//        else if (myRecentState.playerHealths.length==3)
-//        {
-//            myActivity.setContentView(R.layout.epic_gui_3);
-//        }
-//        else
-//        {
-        // myActivity.setContentView(R.layout.epic_gui_4);
-        // }
-
         myActivity.setContentView(R.layout.epic_gui_4);
         playerCard1 = (ImageButton) activity.findViewById(R.id.playerCard1);
         playerCard2 = (ImageButton) activity.findViewById(R.id.playerCard2);
@@ -141,7 +124,6 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
 
         if (myRecentState != null) {
             receiveInfo(myRecentState);
-            populateHand();
         }
 
     } //parse through Recent State and set up GUI elements
@@ -150,25 +132,23 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
         if(myRecentState != null)
         {
 
-        if (v.getId() == R.id.readyButton) {
-            this.onReadyClicked();
-            //Log.i("After Send", "" + myHand.toString());
-        }
-        else if(v.getId() == R.id.killButton) {
-            System.exit(0);
-        }
-        else {
-            ImageButton clickedCard = (ImageButton) myActivity.findViewById(v.getId());
-            clickedCard.setImageAlpha(382 - clickedCard.getImageAlpha());
-        }
+            if (v.getId() == R.id.readyButton) {
+                this.onReadyClicked();
+                //Log.i("After Send", "" + myHand.toString());
+            }
+            else if(v.getId() == R.id.killButton) {
+                System.exit(0);
+            }
+            else {
+                ImageButton clickedCard = (ImageButton) myActivity.findViewById(v.getId());
+                clickedCard.setImageAlpha(382 - clickedCard.getImageAlpha());
+            }
         }
     } //handle various UI actions
 
-    public boolean onLongClick(View v) {
-        return false;
-    } //for use in zoom-in on element
-
     public boolean onReadyClicked() {
+        boolean t;
+
         if(myRecentState.playerStages[playerNum] == STAGE.SelectingCards) {
             int[] spell = new int[3];
             int slider = 0;
@@ -176,6 +156,7 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
                 if (myHandImages[itter].getImageAlpha() <= 250) {
                     spell[slider] = itter;
                     slider++;
+
 
                     if (slider == 3) {
                         break;
@@ -185,14 +166,15 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
 
             //Log.i("Before Send", "" + myHand.toString());
             game.sendAction(new SendSpell(this, new int[]{myHand[spell[0]], myHand[spell[1]], myHand[spell[2]]}));
-            return true;
+            t = true;
+            //populateHand();
         }
         else
         {
-            return false;
+            t = false;
         }
 
-
+        return t;
     } //visual feedback for card selection
 
 
@@ -211,10 +193,15 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
         playerCard7.setImageResource(Deck.theDeck[myHandBuffered[6]].imageRef);
         playerCard8.setImageResource(Deck.theDeck[myHandBuffered[7]].imageRef);
 
-        for(int itter = 0; itter < 4; itter++)
+        /*for(int itter = 0; itter < myRecentState.playerHealths.length; itter++)
         {
             healths[itter].setText("" + myRecentState.playerHealths[itter]);
-        }
+            myRecentState.playerHealths[itter] -= 3;
+        }*/
+        healthOne.setText("" + myRecentState.playerHealths[0]);
+        healthTwo.setText("" + myRecentState.playerHealths[1]);
+        healthThree.setText("" + myRecentState.playerHealths[2]);
+        healthFour.setText("" + myRecentState.playerHealths[3]);
 
         if(myRecentState.focusedCards != null)
         {
@@ -228,6 +215,7 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
                 }
             }
         }
+        getTopView().invalidate();
     }
 
 

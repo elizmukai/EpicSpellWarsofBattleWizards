@@ -16,7 +16,7 @@ public class TheDeathFairy extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected TheDeathFairy() {
-        super(11, 0, 1, R.drawable.thedeathfairy, SCHOOL.DARK);
+        super(29, 0, 1, R.drawable.thedeathfairy, SCHOOL.DARK);
     }
 
     @Override

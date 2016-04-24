@@ -15,7 +15,7 @@ public class MeatierSwarm extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MeatierSwarm() {
-        super(30, 20, 3, R.drawable.meatierswarm, SCHOOL.ELEMENTAL);
+        super(19, 20, 3, R.drawable.meatierswarm, SCHOOL.ELEMENTAL);
     }
 
     @Override

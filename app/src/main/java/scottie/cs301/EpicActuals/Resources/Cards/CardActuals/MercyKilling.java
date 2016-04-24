@@ -15,7 +15,7 @@ public class MercyKilling extends CardNode implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
     protected MercyKilling() {
-        super(31, 5, 3, R.drawable.mercykilling, SCHOOL.DARK);
+        super(20, 5, 3, R.drawable.mercykilling, SCHOOL.DARK);
     }
 
     @Override
